@@ -11,14 +11,25 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up Miniconda
-        uses: conda-incubator/setup-miniconda@v2
+        uses: conda-incubator/setup-miniconda@v3
         with:
-          auto-update-conda: true
-          environment-file: environment.yml
-          activate-environment: libra-run-env
+          auto-update-conda: false
 
-      # example how to run a notebook
-      # - name: Run tritium model
-      #   shell: bash -l {0}
-      #   working-directory: analysis/tritium
-      #   run: jupyter-nbconvert --to notebook tritium_model.ipynb --execute
+      - name: Create Conda environment
+        shell: bash -l {0}
+        run: conda env create --file environment.yml
+
+      - name: Run neutronics
+        shell: bash -l {0}
+        working-directory: analysis/neutron
+        run: |
+          conda activate flibe-1l-run-5
+          python openmc_model.py
+          jupyter-nbconvert --to notebook postprocessing.ipynb --execute
+
+      - name: Run tritium model
+        shell: bash -l {0}
+        working-directory: analysis/tritium
+        run: |
+          conda activate flibe-1l-run-5
+          jupyter-nbconvert --to notebook tritium_model.ipynb --execute

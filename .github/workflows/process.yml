@@ -19,16 +19,19 @@ jobs:
           fetch-depth: 0 # Ensure full history is available for commits
 
       - name: Set up Miniconda
-        uses: conda-incubator/setup-miniconda@v2
+        uses: conda-incubator/setup-miniconda@v3
         with:
-          auto-update-conda: true
-          environment-file: environment.yml
-          activate-environment: baby_1l_run_3
+          auto-update-conda: false
+
+      - name: Create Conda environment
+        shell: bash -l {0}
+        run: conda env create --file environment.yml
 
       - name: Run neutronics model
         shell: bash -l {0}
         working-directory: analysis/neutron
         run: |
+          conda activate flibe-1l-run-5
           python openmc_model.py
           jupyter-nbconvert --to notebook postprocessing.ipynb --execute
 
@@ -36,6 +39,7 @@ jobs:
         shell: bash -l {0}
         working-directory: analysis/tritium
         run: |
+          conda activate flibe-1l-run-5
           python tritium_model.py
           jupyter-nbconvert --to notebook tritium_model.ipynb --execute
 
