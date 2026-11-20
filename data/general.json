@@ -1,0 +1,799 @@
+{
+    "general_data": {
+        "description": "1L FLiBe, solid run after two molten runs",
+        "run_nb": 5,
+        "salt": "FLiBe",
+        "stock": "Alphatec reactor grade",
+        "salt_mass": {
+            "value": 1.95,
+            "unit": "kg"
+        },
+        "temperature": {
+            "dip_setpoints": [
+                {
+                    "value": 22,
+                    "unit": "C",
+                    "set_time": "8/6/2026 10:29"
+                },
+                {
+                    "value": 750,
+                    "unit": "C",
+                    "set_time": "10/16/2026 10:17"
+                },
+                {
+                    "value": 22,
+                    "unit": "C",
+                    "set_time": "10/23/2026 21:37"
+                }
+            ],
+            "logs": {
+                "filename": "FLiBe_1L_run_5_temp.csv",
+                "TC1_label": "DIP TC",
+                "TC2_label": "SIDE TC",
+                "TC3_label": "OV SIDE",
+                "TC4_label": "FURNACE"
+            },
+            "filter_heaters": [
+                {
+                    "value": 22,
+                    "unit": "C",
+                    "set_time": "7/20/2026 14:00"
+                }
+            ]
+        },
+        "purpose_of_run": "Create a touchpoint between the molten and solid irradiation results"
+    },
+    "cover_gas": {
+        "type": "He + 3.54% H2",
+        "pressure_gas_system": {
+            "value": 14,
+            "unit": "PSIG",
+            "changed_to": [
+                {
+                    "value": null,
+                    "unit": "PSIG",
+                    "pressure_change_time": null
+                }
+            ]
+        },
+        "pressure_gas_crucible": {
+            "value": 6,
+            "unit": "PSIG",
+            "note": "in steady state, upstream from crucible",
+            "changed_to": [
+                {
+                    "value": null,
+                    "unit": "PSIG",
+                    "pressure_change_time": null,
+                    "note": null
+                }
+            ]
+        },
+        "flow_rate_sample": [
+            {
+                "value": 150,
+                "unit": "SCCM",
+                "set_time": "8/6/2026 10:29"
+            },
+            {
+                "value": 0,
+                "unit": "SCCM",
+                "set_time": "8/7/2026 10:33"
+            },
+            {
+                "value": 150,
+                "unit": "SCCM",
+                "set_time": "10/14/2026 21:00"
+            }
+        ],
+        "flow_rate_air": {
+            "value": 20,
+            "unit": "SCCM",
+            "switched_to": [
+                {
+                    "value": 0,
+                    "unit": "SCCM",
+                    "air_rate_switch_time": "8/7/2026 10:33"
+                },
+                {
+                    "value": 20,
+                    "unit": "SCCM",
+                    "air_rate_switch_time": "10/14/2026 21:00"
+                }
+            ]
+        },
+        "switched_to": [
+            {
+                "type": null,
+                "gas_switch_time": null,
+                "notes": null
+            }
+        ]
+    },
+    "secondary_gas": {
+        "type": "He + H2O",
+        "pressure_gas_system": {
+            "value": 10,
+            "unit": "PSIG"
+        },
+        "pressure_gas_crucible": {
+            "value": 6,
+            "unit": "PSIG",
+            "note": "in steady state, at crucible"
+        },
+        "flow_rate_sample": [
+            {
+                "value": 250,
+                "unit": "SCCM",
+                "set_time": "8/6/2026 10:29"
+            },
+            {
+                "value": 0,
+                "unit": "SCCM",
+                "set_time": "8/7/2026 10:33"
+            },
+            {
+                "value": 250,
+                "unit": "SCCM",
+                "set_time": "10/14/2026 21:00"
+            }
+        ],
+        "flow_rate_air": {
+            "value": 10,
+            "unit": "SCCM",
+            "switched_to": [
+                {
+                    "value": 0,
+                    "unit": "SCCM",
+                    "air_rate_switch_time": "8/7/2026 10:33"
+                },
+                {
+                    "value": 10,
+                    "unit": "SCCM",
+                    "air_rate_switch_time": "10/14/2026 21:00"
+                }
+            ]
+        },
+        "switched_to": [
+            {
+                "type": null,
+                "gas_switch_time": null,
+                "notes": null
+            }
+        ]
+    },
+    "generators": [
+        {
+            "name": "nGen",
+            "enabled": true,
+            "beam_current": {
+                "value": 300,
+                "unit": "uA",
+                "note": "Target based on factory acceptance, fluctuated in reality"
+            },
+            "beam_voltage": {
+                "value": 130,
+                "unit": "kV"
+            },
+            "periods": [
+                {
+                    "start": "8/6/2026 10:29",
+                    "end": "8/6/2026 23:20"
+                }
+            ]
+        }
+    ],
+    "notes": "Same geometry as Run 3 and 4. nGen positioned under the work surface. Gap between bottom surface of epoxy and the generator under ?? inch.",
+    "neutron_detection": {
+        "foils": {
+            "enabled": true,
+            "position": "on generator, at target plane, facing top and bottom",
+            "data_directory": {"HPGe": "260310_1L_FLiBe_run2/DAQ"},
+            "data_url": null,
+            "detector_type": ["HPGe"],
+            "materials": [
+                {
+                    "position": null,
+                    "material": "Zr",
+                    "designator": "Zirconium Packet #13",
+                    "irradiation_date": "11/19/2025",
+                    "number_of_foils": 2,
+                    "distance_to_source": {
+                        "value": 5,
+                        "unit": "cm"
+                    },
+                    "mass": {
+                        "value": 0.2227,
+                        "unit": "g"
+                    },
+                    "mass_err": {
+                        "value": 0.0003,
+                        "unit": "g"
+                    },
+                    "thickness": {
+                        "value": 0.01,
+                        "unit": "inch"
+                    },
+                    "measurement_directory":{
+                        "HPGe": [
+                            "Zr_foil13_10Mar2026/UNFILTERED",
+                            "Zr_foil13_10Mar2026_count2/UNFILTERED"
+                        ]
+                    }
+                },
+                {
+                    "position": null,
+                    "material": "Zr",
+                    "designator": "Zirconium Packet #14",
+                    "irradiation_date": "11/19/2025",
+                    "number_of_foils": 2,
+                    "distance_to_source": {
+                        "value": 5,
+                        "unit": "cm"
+                    },
+                    "mass": {
+                        "value": 0.2230,
+                        "unit": "g"
+                    },
+                    "mass_err": {
+                        "value": 0.0002,
+                        "unit": "g"
+                    },
+                    "thickness": {
+                        "value": 0.01,
+                        "unit": "inch"
+                    },
+                    "measurement_directory":{
+                        "HPGe": [
+                            "Zr_foil14_10Mar2026/UNFILTERED",
+                            "Zr_foil14_10Mar2026_count2/UNFILTERED"
+                        ]
+                    }
+                }
+            ],
+            "background_directory": {
+                "HPGe": "bkgrd_14Mar26/UNFILTERED"
+            },
+            "check_sources": {
+                "HPGe": {
+                    "Ba133 Count 1": {
+                        "directory": "Ba133_1_uCi_Mar14_Count1/UNFILTERED",
+                        "nuclide": "Ba133",
+                        "activity": {
+                            "value": 1.0,
+                        "unit": "uCi",
+                        "date": "2014-03-15"
+                        },
+                        "energies": null,
+                        "intensities": null,
+                        "half_life": {
+                            "value": null,
+                            "unit": null
+                        }
+                    },
+                    "Ba133 Count 2": {
+                        "directory": "Ba133_1_uCi_Mar14_Count2/UNFILTERED",
+                        "nuclide": "Ba133",
+                        "activity": {
+                            "value": 1.0,
+                            "unit": "uCi",
+                            "date": "2014-03-15"
+                        },
+                        "energies": null,
+                        "half_life": {
+                            "value": null,
+                            "unit": null
+                        }
+                    },
+                    "Co60 Count 1": {
+                        "directory": "Co60_0_872_uCi_19Mar14_Count1/UNFILTERED",
+                        "nuclide": "Co60",
+                        "activity": {
+                            "value": 0.872,
+                            "unit": "uCi",
+                            "date": "2014-03-19"
+                        },
+                        "energies": null,
+                        "intensities": null,
+                        "half_life": {
+                            "value": null,
+                            "unit": null
+                        }
+                    },
+                    "Co60 Count 2": {
+                        "directory": "Co60_0_872_uCi_19Mar14_Count2/UNFILTERED",
+                        "nuclide": "Co60",
+                        "activity": {
+                            "value": 0.872,
+                            "unit": "uCi",
+                            "date": "2014-03-19"
+                        },
+                        "energies": null,
+                        "intensities": null,
+                        "half_life": {
+                            "value": null,
+                            "unit": null
+                        }
+                    },
+                    "Cs137 Count 1": {
+                        "directory": "Cs137_9_38uCi_29Sep23_Count1/UNFILTERED",
+                        "nuclide": "Cs137",
+                        "activity": {
+                            "value": 9.38,
+                            "unit": "uCi",
+                            "date": "2023-09-29"
+                        },
+                        "energies": null,
+                        "intensities": null,
+                        "half_life": {
+                            "value": null,
+                            "unit": null
+                        }
+                    },
+                    "Cs137 Count 2": {
+                        "directory": "Cs137_9_38uCi_29Sep23_Count2/UNFILTERED",
+                        "nuclide": "Cs137",
+                        "activity": {
+                            "value": 9.38,
+                            "unit": "uCi",
+                            "date": "2023-09-29"
+                        },
+                        "energies": null,
+                        "intensities": null,
+                        "half_life": {
+                            "value": null,
+                            "unit": null
+                        }
+                    },
+                    "Na22 Count 1": {
+                        "directory": "Na22_9_98uCi_29Sep23_Count1/UNFILTERED",
+                        "nuclide": "Na22",
+                        "activity": {
+                            "value": 9.98,
+                            "unit": "uCi",
+                            "date": "2023-09-29"
+                        },
+                        "energies": null,
+                        "intensities": null,
+                        "half_life": {
+                            "value": null,
+                            "unit": null
+                        }
+                    },
+                    "Na22 Count 2": {
+                        "directory": "Na22_9_98uCi_29Sep23_Count2/UNFILTERED",
+                        "nuclide": "Na22",
+                        "activity": {
+                            "value": 9.98,
+                            "unit": "uCi",
+                            "date": "2023-09-29"
+                        },
+                        "energies": null,
+                        "intensities": null,
+                        "half_life": {
+                            "value": null,
+                            "unit": null
+                        }
+                    }
+                }
+            }
+        },
+        "diamond": {
+            "enabled": false,
+            "note": null,
+            "position": null
+        },
+        "proton_recoil_telecsope": {
+            "enabled": true,
+            "note": "ROSY failed ~8h into the run.",
+            "position": null
+        }
+    },
+    "timestamps": {
+        "run_start": "8/6/2026 10:29"
+    },
+    "tritium_blank_set": {
+        "filename": "1L-FLB_BLANKS_500MIN_RE.csv",
+        "parameter": "tSIE",
+        "blanks": {
+            "FLB_BL-2": {
+                "water_volume": {
+                    "value": 2,
+                    "unit": "ml"
+                },
+                "scint_volume": {
+                    "value": 10,
+                    "unit": "ml"
+                }
+            },
+            "FLB_BL-4": {
+                "water_volume": {
+                    "value": 4,
+                    "unit": "ml"
+                },
+                "scint_volume": {
+                    "value": 10,
+                    "unit": "ml"
+                }
+            },
+            "FLB_BL-6": {
+                "water_volume": {
+                    "value": 6,
+                    "unit": "ml"
+                },
+                "scint_volume": {
+                    "value": 10,
+                    "unit": "ml"
+                }
+            },
+            "FLB_BL-8": {
+                "water_volume": {
+                    "value": 8,
+                    "unit": "ml"
+                },
+                "scint_volume": {
+                    "value": 10,
+                    "unit": "ml"
+                }
+            },
+            "FLB_BL-9": {
+                "water_volume": {
+                    "value": 9,
+                    "unit": "ml"
+                },
+                "scint_volume": {
+                    "value": 10,
+                    "unit": "ml"
+                }
+            },
+            "FLB_BL-10": {
+                "water_volume": {
+                    "value": 10,
+                    "unit": "ml"
+                },
+                "scint_volume": {
+                    "value": 10,
+                    "unit": "ml"
+                }
+            },
+            "FLB_BL-11": {
+                "water_volume": {
+                    "value": 11,
+                    "unit": "ml"
+                },
+                "scint_volume": {
+                    "value": 10,
+                    "unit": "ml"
+                }
+            },
+            "FLB_BL-12": {
+                "water_volume": {
+                    "value": 12,
+                    "unit": "ml"
+                },
+                "scint_volume": {
+                    "value": 10,
+                    "unit": "ml"
+                }
+            }
+        }
+    },
+    "tritium_detection": {
+        "IV": {
+            "0": {
+                "planned_sample_time": "8/6/2026 10:29",
+                "actual_sample_time": "8/6/2026 10:29",
+                "lsc_vials_filenames": {
+                    "1": "RE_1L-FLB_IV_5-0_5-1_5-2_OV_5-0_5-1.csv",
+                    "2": "RE_1L-FLB_IV_5-0_5-1_5-2_OV_5-0_5-1.csv",
+                    "3": "RE_1L-FLB_IV_5-0_5-1_5-2_OV_5-0_5-1.csv",
+                    "4": "RE_1L-FLB_IV_5-0_5-1_5-2_OV_5-0_5-1.csv"
+                }
+            },
+            "1": {
+                "planned_sample_time": "8/6/2026 22:29",
+                "actual_sample_time": "8/7/2026 01:29",
+                "lsc_vials_filenames": {
+                    "1": "RE_1L-FLB_IV_5-0_5-1_5-2_OV_5-0_5-1.csv",
+                    "2": "RE_1L-FLB_IV_5-0_5-1_5-2_OV_5-0_5-1.csv",
+                    "3": "RE_1L-FLB_IV_5-0_5-1_5-2_OV_5-0_5-1.csv",
+                    "4": "RE_1L-FLB_IV_5-0_5-1_5-2_OV_5-0_5-1.csv"
+                }
+            },
+            "2": {
+                "planned_sample_time": "8/7/2026 10:29",
+                "actual_sample_time": "8/7/2026 10:33",
+                "lsc_vials_filenames": {
+                    "1": "RE_1L-FLB_IV_5-0_5-1_5-2_OV_5-0_5-1.csv",
+                    "2": "RE_1L-FLB_IV_5-0_5-1_5-2_OV_5-0_5-1.csv",
+                    "3": "RE_1L-FLB_IV_5-0_5-1_5-2_OV_5-0_5-1.csv",
+                    "4": "RE_1L-FLB_IV_5-0_5-1_5-2_OV_5-0_5-1.csv"
+                }
+            },
+            "3.5": {
+                "planned_sample_time": "10/14/2026 10:29",
+                "actual_sample_time": "10/14/2026 21:00",
+                "lsc_vials_filenames": {
+                    "1": "NONE",
+                    "2": "NONE",
+                    "3": "NONE",
+                    "4": "NONE"
+                },
+                "note": "Artificial zero sample during stagnant period"
+            },
+            "3": {
+                "planned_sample_time": "10/15/2026 10:29",
+                "actual_sample_time": "10/15/2026 15:40",
+                "lsc_vials_filenames": {
+                    "1": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "2": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "3": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "4": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv"
+                }
+            },
+            "4": {
+                "planned_sample_time": "10/16/2026 10:29",
+                "actual_sample_time": "10/16/2026 10:05",
+                "lsc_vials_filenames": {
+                    "1": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "2": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "3": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "4": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv"
+                }
+            },
+            "5": {
+                "planned_sample_time": "10/16/2026 22:29",
+                "actual_sample_time": "10/16/2026 23:10",
+                "lsc_vials_filenames": {
+                    "1": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "2": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "3": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "4": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv"
+                }
+            },
+            "6": {
+                "planned_sample_time": "10/17/2026 10:29",
+                "actual_sample_time": "10/17/2026 11:45",
+                "lsc_vials_filenames": {
+                    "1": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "2": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "3": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "4": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv"
+                }
+            },
+            "7": {
+                "planned_sample_time": "10/17/2026 22:29",
+                "actual_sample_time": "10/18/2026 01:25",
+                "lsc_vials_filenames": {
+                    "1": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "2": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "3": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "4": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv"
+                }
+            },
+            "8": {
+                "planned_sample_time": "10/18/2026 16:29",
+                "actual_sample_time": "10/18/2026 18:55",
+                "lsc_vials_filenames": {
+                    "1": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "2": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "3": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "4": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv"
+                }
+            },
+            "9": {
+                "planned_sample_time": "10/19/2026 10:29",
+                "actual_sample_time": "10/19/2026 11:53",
+                "lsc_vials_filenames": {
+                    "1": "NONE",
+                    "2": "NONE",
+                    "3": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "4": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv"
+                }
+            },
+            "10": {
+                "planned_sample_time": "10/20/2026 10:29",
+                "actual_sample_time": "10/20/2026 09:21",
+                "lsc_vials_filenames": {
+                    "1": "NONE",
+                    "2": "NONE",
+                    "3": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "4": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv"
+                }
+            },
+            "11": {
+                "planned_sample_time": "10/21/2026 10:29",
+                "actual_sample_time": "10/21/2026 10:21",
+                "lsc_vials_filenames": {
+                    "1": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "2": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "3": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "4": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv"
+                }
+            },
+            "12": {
+                "planned_sample_time": "10/22/2026 10:29",
+                "actual_sample_time": "10/22/2026 09:09",
+                "lsc_vials_filenames": {
+                    "1": "NONE",
+                    "2": "NONE",
+                    "3": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "4": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv"
+                }
+            },
+            "13": {
+                "planned_sample_time": "10/23/2026 10:29",
+                "actual_sample_time": "10/23/2026 21:29",
+                "lsc_vials_filenames": {
+                    "1": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "2": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "3": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "4": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv"
+                }
+            },
+            "14": {
+                "planned_sample_time": "10/26/2026 10:29",
+                "actual_sample_time": "10/26/2026 17:24",
+                "lsc_vials_filenames": {
+                    "1": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "2": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "3": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "4": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv"
+                }
+            }
+        },
+        "OV": {
+            "0": {
+                "planned_sample_time": "8/6/2026 10:29",
+                "actual_sample_time": "8/6/2026 10:29",
+                "lsc_vials_filenames": {
+                    "1": "RE_1L-FLB_IV_5-0_5-1_5-2_OV_5-0_5-1.csv",
+                    "2": "RE_1L-FLB_IV_5-0_5-1_5-2_OV_5-0_5-1.csv",
+                    "3": "RE_1L-FLB_IV_5-0_5-1_5-2_OV_5-0_5-1.csv",
+                    "4": "RE_1L-FLB_IV_5-0_5-1_5-2_OV_5-0_5-1.csv"
+                }
+            },
+            "1": {
+                "planned_sample_time": "8/7/2026 10:29",
+                "actual_sample_time": "8/7/2026 10:33",
+                "lsc_vials_filenames": {
+                    "1": "RE_1L-FLB_IV_5-0_5-1_5-2_OV_5-0_5-1.csv",
+                    "2": "RE_1L-FLB_IV_5-0_5-1_5-2_OV_5-0_5-1.csv",
+                    "3": "RE_1L-FLB_IV_5-0_5-1_5-2_OV_5-0_5-1.csv",
+                    "4": "RE_1L-FLB_IV_5-0_5-1_5-2_OV_5-0_5-1.csv"
+                }
+            },
+            "1.5": {
+                "planned_sample_time": "10/14/2026 10:29",
+                "actual_sample_time": "10/14/2026 21:00",
+                "lsc_vials_filenames": {
+                    "1": "NONE",
+                    "2": "NONE",
+                    "3": "NONE",
+                    "4": "NONE"
+                },
+                "note": "Artificial zero sample during stagnant period"
+            },
+            "2": {
+                "planned_sample_time": "10/15/2026 10:29",
+                "actual_sample_time": "10/15/2026 15:40",
+                "lsc_vials_filenames": {
+                    "1": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "2": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "3": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "4": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv"
+                }
+            },
+            "3": {
+                "planned_sample_time": "10/16/2026 10:29",
+                "actual_sample_time": "10/16/2026 10:05",
+                "lsc_vials_filenames": {
+                    "1": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "2": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "3": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "4": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv"
+                }
+            },
+            "4": {
+                "planned_sample_time": "10/16/2026 22:29",
+                "actual_sample_time": "10/16/2026 23:10",
+                "lsc_vials_filenames": {
+                    "1": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "2": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "3": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "4": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv"
+                }
+            },
+            "5": {
+                "planned_sample_time": "10/17/2026 10:29",
+                "actual_sample_time": "10/17/2026 11:45",
+                "lsc_vials_filenames": {
+                    "1": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "2": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "3": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "4": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv"
+                }
+            },
+            "6": {
+                "planned_sample_time": "10/17/2026 22:29",
+                "actual_sample_time": "10/18/2026 01:25",
+                "lsc_vials_filenames": {
+                    "1": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "2": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "3": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "4": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv"
+                }
+            },
+            "7": {
+                "planned_sample_time": "10/18/2026 16:29",
+                "actual_sample_time": "10/18/2026 18:55",
+                "lsc_vials_filenames": {
+                    "1": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "2": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "3": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv",
+                    "4": "INIT_1L-FLB_IV_5-3_THRU_5-8_OV_5-2_THRU_5-7.csv"
+                }
+            },
+            "8": {
+                "planned_sample_time": "10/19/2026 10:29",
+                "actual_sample_time": "10/19/2026 11:53",
+                "lsc_vials_filenames": {
+                    "1": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "2": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "3": "NONE",
+                    "4": "NONE"
+                }
+            },
+            "9": {
+                "planned_sample_time": "10/20/2026 10:29",
+                "actual_sample_time": "10/20/2026 09:21",
+                "lsc_vials_filenames": {
+                    "1": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "2": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "3": "NONE",
+                    "4": "NONE"
+                }
+            },
+            "10": {
+                "planned_sample_time": "10/21/2026 10:29",
+                "actual_sample_time": "10/21/2026 10:21",
+                "lsc_vials_filenames": {
+                    "1": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "2": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "3": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "4": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv"
+                }
+            },
+            "11": {
+                "planned_sample_time": "10/22/2026 10:29",
+                "actual_sample_time": "10/22/2026 09:09",
+                "lsc_vials_filenames": {
+                    "1": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "2": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "3": "NONE",
+                    "4": "NONE"
+                }
+            },
+            "12": {
+                "planned_sample_time": "10/23/2026 10:29",
+                "actual_sample_time": "10/23/2026 21:29",
+                "lsc_vials_filenames": {
+                    "1": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "2": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "3": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "4": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv"
+                }
+            },
+            "13": {
+                "planned_sample_time": "10/26/2026 10:29",
+                "actual_sample_time": "10/26/2026 17:24",
+                "lsc_vials_filenames": {
+                    "1": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "2": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "3": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv",
+                    "4": "RE_1L-FLB_IV_5-9_THRU_5-14_OV_5-8_THRU_5-13.csv"
+                }
+            }
+        }
+    }
+}
